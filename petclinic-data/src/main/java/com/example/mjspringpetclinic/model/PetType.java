@@ -1,4 +1,4 @@
-package model;
+package com.example.mjspringpetclinics.model;
 
 public class PetType {
 
