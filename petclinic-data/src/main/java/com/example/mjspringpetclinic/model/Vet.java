@@ -1,4 +1,4 @@
-package com.example.mjspringpetclinics.model;
+package com.example.mjspringpetclinic.model;
 
 public class Vet extends Person {
 }
