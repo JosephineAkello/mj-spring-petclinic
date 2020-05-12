@@ -49,7 +49,7 @@ public class DataLoader implements CommandLineRunner {
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
-        vet2.setId(1l);
+        vet2.setId(2l);
         vet2.setFirstName("Heey");
         vet2.setLastName("Oyoo");
 
