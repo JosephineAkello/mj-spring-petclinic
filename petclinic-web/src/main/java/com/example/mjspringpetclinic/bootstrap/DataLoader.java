@@ -1,6 +1,10 @@
 package com.example.mjspringpetclinic.bootstrap;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import com.example.mjspringpetclinic.model.Owner;
+import com.example.mjspringpetclinic.model.Pet;
 import com.example.mjspringpetclinic.model.PetType;
 import com.example.mjspringpetclinic.model.Vet;
 import com.example.mjspringpetclinic.service.OwnerService;
@@ -44,6 +48,13 @@ public class DataLoader implements CommandLineRunner {
         owner1.setCity("Muhoroni");
         owner1.setTelephone("071234567");
 
+        Pet mjsPet = new Pet();
+        mjsPet.setPetType(saveDogPetType);
+        mjsPet.setOwner(owner1);
+        mjsPet.setBirthdate(LocalDateTime.now());
+        mjsPet.setName("Bosco");
+        owner1.getPets().add(mjsPet);
+
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
@@ -52,6 +63,14 @@ public class DataLoader implements CommandLineRunner {
         owner2.setAddress("1111 Kisumu");
         owner2.setCity("Kisumu");
         owner2.setTelephone("072255554");
+
+        Pet aksPet = new Pet();
+        aksPet.setName("Lovely");
+        aksPet.setOwner(owner2);
+        aksPet.setBirthdate(LocalDateTime.now());
+        aksPet.setName("Josso");
+        owner2.getPets().add(aksPet);
+
 
         ownerService.save(owner2);
 
