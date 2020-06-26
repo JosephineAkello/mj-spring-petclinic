@@ -4,7 +4,9 @@ import java.util.Set;
 
 import com.example.mjspringpetclinic.model.Visit;
 import com.example.mjspringpetclinic.service.VisitService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
     @Override

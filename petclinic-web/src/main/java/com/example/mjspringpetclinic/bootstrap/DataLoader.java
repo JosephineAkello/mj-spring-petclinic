@@ -1,5 +1,6 @@
 package com.example.mjspringpetclinic.bootstrap;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import com.example.mjspringpetclinic.model.Owner;
@@ -7,10 +8,12 @@ import com.example.mjspringpetclinic.model.Pet;
 import com.example.mjspringpetclinic.model.PetType;
 import com.example.mjspringpetclinic.model.Speciality;
 import com.example.mjspringpetclinic.model.Vet;
+import com.example.mjspringpetclinic.model.Visit;
 import com.example.mjspringpetclinic.service.OwnerService;
 import com.example.mjspringpetclinic.service.PetTypeService;
 import com.example.mjspringpetclinic.service.SpecialityService;
 import com.example.mjspringpetclinic.service.VetService;
+import com.example.mjspringpetclinic.service.VisitService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -23,12 +26,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -49,6 +54,7 @@ public class DataLoader implements CommandLineRunner {
         PetType cat = new PetType();
         dog.setName("Cat");
         PetType saveCatPetType = petTypeService.save(cat);
+
 
         Speciality radiology = new Speciality();
         radiology.setDescription("Radiology");
@@ -97,7 +103,14 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner2);
 
+        Visit catvisit = new Visit();
+        catvisit.setPet(aksPet);
+        catvisit.setDate(LocalDateTime.now());
+        catvisit.setDescription("Sneezy Kitty");
+
+       visitService.save(catvisit);
         System.out.println("Loaded Owners....");
+
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Seee");
