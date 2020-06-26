@@ -1,4 +1,4 @@
 package com.example.mjspringpetclinic.repositories;
 
-public class OwnerRepository {
+public interface OwnerRepository {
 }
