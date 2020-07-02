@@ -87,6 +87,6 @@ class OwnerServiceMapTest {
         Owner mj = ownerServiceMap.findByLastName("foo");
 
         assertNotNull(mj);
-        
+
     }
 }
