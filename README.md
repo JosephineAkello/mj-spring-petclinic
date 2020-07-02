@@ -3,6 +3,8 @@ The following was discovered as part of building this project:
 
 * The original package name 'com.example.mj-spring-petclinic' is invalid and this project uses 'com.example.mjspringpetclinic' instead.
 
+[![CircleCI](https://circleci.com/gh/JosephineAkello/jokesApp.svg?style=svg)](https://circleci.com/gh/JosephineAkello/jokesApp)
+
 # Getting Started
 
 ### Reference Documentation
